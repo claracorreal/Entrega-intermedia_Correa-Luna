@@ -1,0 +1,16 @@
+{% extends "app_proyecto/base.html" %}
+
+{% block cuerpo %} 
+
+
+<h2> LISTADO DE CLIENTES </h2>
+<ul>
+    {% for cliente in clientes %}
+    <h4> Empresa: {{cliente.empresa}}</h4>
+    <li>email: {{cliente.mail}}</li>
+    <li>Última compra: {{cliente.fecha_compra}}</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
