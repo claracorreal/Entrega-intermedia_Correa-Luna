@@ -4,4 +4,15 @@
 
 <div>CLIENTES</div>
 
+<form action="" method="POST">{% csrf_token %}
+        
+    <table>
+    {{formcli}}
+    </table>
+    
+    <input type="submit", value="Enviar">      
+            
+</form>
+
+
 {% endblock %}
