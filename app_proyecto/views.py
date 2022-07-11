@@ -17,7 +17,7 @@ def clienteForm(request):
             datos = formcli.cleaned_data
             cliente1 = Cliente(empresa=datos['empresa'], mail=datos['mail'], fecha_compra=datos['fecha_compra'])
             cliente1.save()
-            return render(request, "app_proyecto/clientes.html")
+            return render(request, "app_proyecto/base.html")
     
     else:
         formcli = ClienteFormulario()
@@ -38,11 +38,11 @@ def vendedorForm(request):
             datos = formven.cleaned_data
             vendedor1 = Vendedor(nombre=datos['nombre'], apellido=datos['apellido'], mail=datos['mail'], antiguedad=datos['antiguedad'])
             vendedor1.save()
-            return render(request, "app_proyecto/vendedores.html")
+            return render(request, "app_proyecto/base.html")
     
     else:
         formven = VendedorFormulario()
-        return render(request, "app_proyecto/vendedores.html", {'formven':formven})
+        return render(request, "app_proyecto/base.html", {'formven':formven})
 
 def mostrar_vendedores(request):
     listado = {'vendedores':Vendedor.objects.all()}
@@ -59,7 +59,7 @@ def productoForm(request):
             datos = formprodu.cleaned_data
             producto1 = Productos(producto=datos['producto'], stock=datos['stock'])
             producto1.save()
-            return render(request, "app_proyecto/productos.html")
+            return render(request, "app_proyecto/base.html")
     
     else:
         formprodu = ProductosFormulario()

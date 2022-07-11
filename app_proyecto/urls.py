@@ -2,7 +2,7 @@ from django.urls import path
 from app_proyecto.views import buscar, clienteForm, vendedorForm, productoForm, mostrar_clientes, mostrar_inicio, mostrar_vendedores, mostrar_productos
 
 urlpatterns = [
-    path('home/', mostrar_inicio),
+    path('inicio/', mostrar_inicio),
     path('clientes/', clienteForm),
     path('lista-clientes/', mostrar_clientes),
     path('vendedor/', vendedorForm),

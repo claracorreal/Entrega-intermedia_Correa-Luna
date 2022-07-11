@@ -13,6 +13,9 @@
 {% if productos %}
 
 <p> Estamos buscando el item: {{producto}}</p>
+
+<hr>
+
 <ul>
     {% for producto in productos %}
             <li> {{producto.producto}}: {{producto.stock}} disponibles</li>
