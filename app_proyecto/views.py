@@ -29,8 +29,44 @@ def mostrar_clientes(request):
     return render(request, "app_proyecto/lista_clientes.html", listado)
 
 
+def vendedorForm(request):
+    if request.method == "POST":
+        formven = VendedorFormulario(request.POST)
+        print(formven)
+
+        if formven.is_valid():
+            datos = formven.cleaned_data
+            vendedor1 = Vendedor(nombre=datos['nombre'], apellido=datos['apellido'], mail=datos['mail'], antiguedad=datos['antiguedad'])
+            vendedor1.save()
+            return render(request, "app_proyecto/vendedores.html")
+    
+    else:
+        formven = VendedorFormulario()
+        return render(request, "app_proyecto/vendedores.html", {'formven':formven})
+
 def mostrar_vendedores(request):
-    return render(request, "app_proyecto/vendedores.html", {})
+    listado = {'vendedores':Vendedor.objects.all()}
+    return render(request, "app_proyecto/lista_vendedores.html", listado)
+
+
+
+def productoForm(request):
+    if request.method == "POST":
+        formprodu = ProductosFormulario(request.POST)
+        print(formprodu)
+
+        if formprodu.is_valid():
+            datos = formprodu.cleaned_data
+            producto1 = Productos(producto=datos['producto'], stock=datos['stock'])
+            producto1.save()
+            return render(request, "app_proyecto/productos.html")
+    
+    else:
+        formprodu = ProductosFormulario()
+        return render(request, "app_proyecto/productos.html", {'formprodu':formprodu})
+
 
 def mostrar_productos(request):
-    return render(request, "app_proyecto/productos.html", {})
+    listado = {'productos':Productos.objects.all()}
+    return render(request, "app_proyecto/lista_productos.html", listado)
+

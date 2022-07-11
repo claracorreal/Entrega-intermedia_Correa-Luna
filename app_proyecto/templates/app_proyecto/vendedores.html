@@ -1,7 +1,17 @@
 {% extends "app_proyecto/base.html" %}
 
-{% block cuerpo %} 
+{% block cuerpo %}
 
 <div>VENDEDORES</div>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <table>
+        {{formven}}
+    </table>
+
+    <input type="submit", value="Enviar">
+</form>
 
 {% endblock %}

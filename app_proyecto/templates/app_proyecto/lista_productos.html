@@ -1,0 +1,15 @@
+{% extends "app_proyecto/base.html" %}
+
+{% block cuerpo %} 
+
+
+<h2> LISTA DE PRODUCTOS </h2>
+<ul>
+    {% for producto in productos %}
+    <h4> {{producto.producto}}: {{producto.stock}} disponibles</h4>  
+
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
