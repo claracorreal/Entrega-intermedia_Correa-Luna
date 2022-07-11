@@ -26,7 +26,7 @@ def clienteForm(request):
 
 def mostrar_clientes(request):
     listado = {'clientes':Cliente.objects.all()}
-    return render(request, "app_proyecto/lista_clientes.html", listado)
+    return render(request, "app_proyecto/clientes.html", listado)
 
 
 def vendedorForm(request):
@@ -42,7 +42,8 @@ def vendedorForm(request):
     
     else:
         formven = VendedorFormulario()
-        return render(request, "app_proyecto/base.html", {'formven':formven})
+        return render(request, "app_proyecto/vendedores.html", {'formven':formven})
+
 
 def mostrar_vendedores(request):
     listado = {'vendedores':Vendedor.objects.all()}
