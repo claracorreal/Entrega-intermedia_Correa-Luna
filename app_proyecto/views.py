@@ -70,3 +70,16 @@ def mostrar_productos(request):
     listado = {'productos':Productos.objects.all()}
     return render(request, "app_proyecto/lista_productos.html", listado)
 
+
+
+def buscar(request):
+    if request.GET:
+        #respuesta = f"Estoy buscando el item: {request.GET['producto']}"
+        produ = request.GET['producto']
+        filtro = Productos.objects.filter(producto__icontains=produ)
+
+        return render(request,"app_proyecto/busquedaProducto.html", {"productos":filtro, "producto":produ})
+    else:
+        respuesta = "No hay datos con esa descripción"
+
+    return render (request, "app_proyecto/busquedaProducto.html",{"respuesta":respuesta})
