@@ -4,4 +4,15 @@
 
 <div>PRODUCTOS</div>
 
+<form action="" method="POST">{% csrf_token %}
+        
+    <table>
+        {{formprodu}}
+    </table>
+    
+    <input type="submit", value="Enviar">      
+            
+</form>
+
+
 {% endblock %}

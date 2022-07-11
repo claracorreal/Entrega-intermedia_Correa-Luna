@@ -1,0 +1,16 @@
+{% extends "app_proyecto/base.html" %}
+
+{% block cuerpo %} 
+
+
+<h2> LISTADO DE VENDEDORES </h2>
+<ul>
+    {% for vendedor in vendedores %}
+    <h4> Nombre: {{vendedor.nombre}} {{vendedor.apellido}}</h4>
+    <li>email: {{vendedor.mail}}</li>
+    <li>Tiempo de trabajo en la empresa: {{vendedor.antiguedad}} años</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
