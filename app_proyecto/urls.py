@@ -1,5 +1,5 @@
 from django.urls import path
-from app_proyecto.views import clienteForm, vendedorForm, productoForm, mostrar_clientes, mostrar_inicio, mostrar_vendedores, mostrar_productos
+from app_proyecto.views import buscar, clienteForm, vendedorForm, productoForm, mostrar_clientes, mostrar_inicio, mostrar_vendedores, mostrar_productos
 
 urlpatterns = [
     path('home/', mostrar_inicio),
@@ -8,5 +8,6 @@ urlpatterns = [
     path('vendedor/', vendedorForm),
     path('lista-vendedores/', mostrar_vendedores),
     path('productos/', productoForm),
-    path('lista-productos/', mostrar_productos)
+    path('lista-productos/', mostrar_productos),
+    path('buscar/', buscar),
 ]

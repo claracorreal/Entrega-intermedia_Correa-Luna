@@ -1,0 +1,28 @@
+{% extends "app_proyecto/base.html" %}
+
+{% block cuerpo %} 
+
+<form action="" method="GET">
+        
+    <input type='string' name='producto' id='producto'>
+    
+    <input type="submit", value="Buscar">      
+            
+</form>
+
+{% if productos %}
+
+<p> Estamos buscando el item: {{producto}}</p>
+<ul>
+    {% for producto in productos %}
+            <li> {{producto.producto}}: {{producto.stock}} disponibles</li>
+    {% endfor %}
+
+</ul>
+{% else %}
+    <p>No hay datos con esa descripción.</p>
+{% endif %}
+
+<p style="color: red;">{{respuesta}}</p>
+
+{% endblock %}
