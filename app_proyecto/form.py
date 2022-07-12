@@ -14,3 +14,4 @@ class VendedorFormulario(forms.Form):
 class ProductosFormulario(forms.Form):
     producto = forms.CharField(max_length=40)
     stock = forms.IntegerField()
+

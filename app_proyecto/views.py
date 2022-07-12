@@ -26,7 +26,7 @@ def clienteForm(request):
 
 def mostrar_clientes(request):
     listado = {'clientes':Cliente.objects.all()}
-    return render(request, "app_proyecto/clientes.html", listado)
+    return render(request, "app_proyecto/lista_clientes.html", listado)
 
 
 def vendedorForm(request):
@@ -81,6 +81,6 @@ def buscar(request):
 
         return render(request,"app_proyecto/busquedaProducto.html", {"productos":filtro, "producto":produ})
     else:
-        respuesta = "No hay datos con esa descripción"
+        respuesta = "Debe ingresar una busqueda"
 
     return render (request, "app_proyecto/busquedaProducto.html",{"respuesta":respuesta})
