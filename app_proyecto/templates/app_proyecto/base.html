@@ -14,10 +14,14 @@
     
     <!-- Menu -->
 <ul class="nav nav-pills">
-    <li role="presentation" class="active"><a href="#"> INICIO</a></li>
-    <li role="presentation"><a href="#">CLIENTES</a></li>
-    <li role="presentation"><a href="#">VENDEDORES</a></li>
-    <li role="presentation"><a href="#">PRODUCTOS</a></li>
+    <li role="presentation" class="active"><a href="{% url 'inicio' %}"> Inicio</a></li>
+    <li role="presentation"><a href="{% url 'ingresar-cliente' %}">Ingresar Cliente</a></li>
+    <li role="presentation"><a href="{% url 'lista-clientes' %}">Lista Clientes</a></li>    
+    <li role="presentation"><a href="{% url 'ingresar-vendedor' %}">Ingresar Vendedor</a></li>
+    <li role="presentation"><a href="{% url 'lista-vendedores' %}">Lista Vendedores</a></li>
+    <li role="presentation"><a href="{% url 'ingresar-producto' %}">Ingresar Producto</a></li>
+    <li role="presentation"><a href="{% url 'lista-productos' %}">Lista Productos</a></li>
+    <li role="presentation"><a href="{% url 'busqueda_productos' %}">Busqueda</a></li>
   </ul>
   
 </head>
